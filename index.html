@@ -1,0 +1,179 @@
+<!--Virtual Tour of Obaid Siddiqi's Lab.
+Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ -->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ncbs</title>
+    <link rel="stylesheet" href="src/css/pannellum.css"/>
+
+    <script type="text/javascript" src="src/js/routie.js"></script>
+    <script type="text/javascript" src="src/js/routes.js"></script>
+    
+    <script type="text/javascript" src="src/js/pannellum.js"></script>
+    <script type="text/javascript" src="src/js/libpannellum.js"></script>
+    <script type="text/javascript" src="src/js/RequestAnimationFrame.js"></script>
+    <style>
+    #desk {
+    	position: absolute;
+    	top: 20%;
+    	left:10%;
+    	z-index: 10;
+    	display: none;
+    	
+    }
+    #notice {
+        position: absolute;
+        top: 20%;
+        left:10%;
+        z-index: 10;
+        display: none;
+        
+    }
+    #panorama {
+        width: 98vw;
+        height: 95vh;
+    }
+    </style>
+</head>
+<body>
+<div id='desk'><p>National Centre for Biological Sciences in Bangalore, Karnataka, is a research centre specialising in biological research. It is a part of the Tata Institute of Fundamental Research under the Department of Atomic Energy of the Government of India</p></div>
+<div id='notice'><p style="color:red">National Centre for Biological Sciences in Bangalore, Karnataka, is a research centre specialising in biological research. It is a part of the Tata Institute of Fundamental Research under the Department of Atomic Energy of the Government of India</p></div>
+
+<div id="panorama"></div>
+
+<script>
+pannellum.viewer('panorama', {
+
+    "default": {
+        "firstScene": "siddiqi_office_hdr",
+        "sceneFadeDuration": 2000,
+        "autoLoad": true,
+    	"autoRotate": -0.4,
+    	"autoRotateInactivityDelay": 6000
+    },
+    
+    "scenes": {
+        "siddiqi_office_hdr": {
+            "title": "siddiqi_office",
+            "type": "equirectangular",
+            "panorama": "panoramas/resized/siddiqi_office_hdr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -12,
+                    "yaw": 40,
+                    "type": "info",
+                    "text": "This is siddiqi's desk."
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "info",
+                    "text": "OS Lab - Abu bench.JPG",
+                    "URL": "#&q?i=desk"
+                    
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 190,
+                    "type": "scene",
+                    "text": "Outside",
+                    "sceneId": "1"
+                }
+            ]
+        },
+
+        "1": {
+            "title": "1",
+            "panorama": "panoramas/resized/1.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 90,
+                    "type": "scene",
+                    "text": "siddiqi_office_hdr",
+                    "sceneId": "siddiqi_office_hdr"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 170,
+                    "type": "scene",
+                    "text": "2",
+                    "sceneId": "table_legs_hdr"
+                }
+            ]
+        },
+
+        "table_legs_hdr": {
+            "title": "table_legs_hdr",
+            "panorama": "panoramas/resized/table_legs_hdr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 50,
+                    "type": "scene",
+                    "text": "1",
+                    "sceneId": "1"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -50,
+                    "type": "scene",
+                    "text": "2_hdr",
+                    "sceneId": "2_hdr"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "info",
+                    "text": "OS Lab - Abu bench.JPG",
+                    "URL": "#&q?i=notice"
+                    
+                },
+
+            ]
+        },
+
+        "2_hdr": {
+            "title": "2_hdr",
+            "panorama": "panoramas/resized/2_hdr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 100,
+                    "type": "scene",
+                    "text": "table_legs_hdr",
+                    "sceneId": "table_legs_hdr"
+                },
+                 {
+                    "pitch": 180,
+                    "yaw": 100,
+                    "type": "scene",
+                    "text": "3_hdr",
+                    "sceneId": "3_hdr"
+                }
+            ]
+        },
+
+        "3_hdr": {
+            "title": "3_hdr",
+            "panorama": "panoramas/resized/3_hdr.JPG",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -100,
+                    "type": "scene",
+                    "text": "2_hdr",
+                    "sceneId": "2_hdr"
+                }
+            ]
+        }
+
+        
+    }
+});
+</script>
+
+</body>
+</html>
