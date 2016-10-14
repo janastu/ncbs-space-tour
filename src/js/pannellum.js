@@ -113,11 +113,12 @@ dragFix.className = 'pnlm-dragfix';
 container.appendChild(dragFix);
 
 // Display about information on right click
-var aboutMsg = document.createElement('span');
+/*var aboutMsg = document.createElement('span');
 aboutMsg.className = 'pnlm-about-msg';
 aboutMsg.innerHTML = '<a href="https://pannellum.org/" target="_blank">Pannellum</a>';
 container.appendChild(aboutMsg);
 dragFix.addEventListener('contextmenu', aboutMessage);
+*/
 
 // Create info display
 var infoDisplay = {};
@@ -2017,26 +2018,15 @@ function load() {
  * @param {number} targetHfov - HFOV viewer should use once scene loads.
  * @param {boolean} [fadeDone] - If `true`, fade setup is skipped.
  */
- routie('*/:name?', function(name) {
 
-if(name.indexOf('&') > -1)
-{
-    window.temp = name.split('=');
-    window.temp2 = temp[1];
-    document.getElementById(window.temp2).style.display='block';  
-
-}
-else
-    window.location.hash="";
-});
 
 function loadScene(sceneId, targetPitch, targetYaw, targetHfov, fadeDone) {
     loaded = false;
     animatedMove = {};
-
-    document.getElementById(window.temp2).style.display='none';     
+    
+      if (typeof(window.temp2) != "undefined"){
     window.location.hash = "";
-
+}
     
     
     // Set up fade if specified
