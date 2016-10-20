@@ -1,0 +1,108 @@
+/* Theme from designer */
+/*a:hover {
+  text-decoration: none;
+}*/
+
+
+.image-container{
+	height:600px;
+}
+
+.image-container img {
+	max-width:100%;
+	max-height:auto;
+}
+.nav-tabs > li > a {
+	border-radius:0px;
+	color: darkcyan;
+}
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+	
+	color: darkcyan;
+	border: 1px solid darkcyan;
+	border-bottom: transparent;
+	background-color: transparent;
+}
+.list-group-item {
+			background-color: transparent;
+			border-color: #009688;
+		}
+		.sub-theme-nav-item{
+			/*padding: 7px;	*/	    
+		}
+		.sub-theme-nav-item img {
+			margin: 0 auto;
+			background: transparent;
+			border:none;
+			height: auto;
+			width: 100%;
+			max-width: 135px;
+		}
+		.panel-ncbs-foot{
+			background-color: #cbb534;
+			width:150px;
+			height:130px;
+		}
+		#ncbs-nav-footer .panel {
+			border-radius: 0px;
+			margin:4px;
+		}
+		
+		#ncbs-nav-footer {
+			background-color: #f4f3e9;
+			color:#333726;
+		}
+		#ncbs-nav-footer a:hover .ncbs-foot-nav-text{
+			
+				background-color: #333726;
+				color: #fffebf;
+				text-decoration:underline;
+		}
+		#ncbs-nav-footer a:focus .ncbs-foot-nav-text{
+			
+				background-color: #333726;
+				color: #fffebf;
+				text-decoration:none;
+		}
+		.ncbs-foot-nav-text {
+			background-color: #cbb534;
+			    margin-left: 4px;
+			    margin-right: 4px;
+			    margin-top: -4px;
+			    color: #333726;
+			    font-size: 17px;
+			    font-family: roboto;
+		}
+
+		.ncbs-home-text{
+			background-color:rgba(102, 102, 102, 0.2); 
+			position:fixed; 
+			top:13px; 
+			max-width: 375px; 
+			font-size: 16px; 
+			line-height: 19px; 
+			font-family: roboto;
+			color: #f2f2f2;
+			padding:15px; 
+			border-radius:0px; 
+			margin-left:45px;
+			-webkit-transition: display 0.5s ease;
+			-moz-transition: display 0.5s ease;
+			-ms-transition: display 0.5s ease;
+			-o-transition: display 0.5s ease;
+			transition: display 0.5s ease;
+		}
+
+#spinner-launch {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+
+
+
+
+
+

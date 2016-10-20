@@ -2024,9 +2024,6 @@ function loadScene(sceneId, targetPitch, targetYaw, targetHfov, fadeDone) {
     loaded = false;
     animatedMove = {};
     
-      if (typeof(window.temp2) != "undefined"){
-    window.location.hash = "";
-}
     
     
     // Set up fade if specified
