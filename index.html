@@ -118,22 +118,20 @@ scrollEffect();
 <!-- /header -->
 
 
-<!-- spacer -->
-<br><br><br><br><br><br>
 
 
 
-            <div class="col-md-12"><div id='intro'>
-	           <h3><b>Space Tour</b> offers a mash-up of oral histories, archival documents and contemporary spatial mapping techniques. The current tour is Obaid Siddiqi's office and lab, with Deepti Trivedi's memories. Click on the information icon and arrows to navigate. Future developments can layer other people's memories and other places.</h3>
+        
+                <div id='intro'>
+                    <div id = 'close-intro'>X</div>
+	               <h4><br><br><b>Space Tour</b> offers a mash-up of oral histories, archival documents and contemporary spatial mapping techniques. The current tour is Obaid Siddiqi's office and lab, with the memories of Deepti Trivedi, a former student. Click on the information icon and arrows to navigate. Future developments will layer other people's memories and will be tours of other places.</h4>
+                   </div>
             </div>
-        </div>
-</div>
+        
 
 
 <!--Panorama-->
-<div class="container-fluid">
-		<div class="row-fluid">
-            <div id='panorama'>
+<div id='panorama'>
                 <!-- Narration-->
                 <div id="narration" class="narration">
                     <!--Title-->
@@ -150,8 +148,6 @@ scrollEffect();
 
                 </div>
             </div>
-	   </div>
-    </div>
 
 
 <!-- footer spacing -->
@@ -306,7 +302,7 @@ pannellum.viewer('panorama', {
         "autoLoad": true,
         "hfov": 80,
     	"autoRotate": -0.4,
-    	"autoRotateInactivityDelay": 6000,
+    	"autoRotateInactivityDelay": 40000,
     	"showFullscreenCtrl": false,
     	"showZoomCtrl": false,
     	"compass":false
@@ -315,7 +311,7 @@ pannellum.viewer('panorama', {
     
     "scenes": {
         "siddiqi_office_hdr": {
-            "title": "Obaid Siddiqi's Office",
+            "title": "Obaid Siddiqi's Office ",
             "type": "equirectangular",
             "panorama": "panoramas/resized/siddiqi_office_hdr.jpg",
             "hotSpots": [
@@ -517,7 +513,7 @@ template = function(id){
 
 	
 	//setup title
-	var titleTemplate = _.template("<h3><%=title%></h3><br>");
+	var titleTemplate = _.template("<h4><%=title%></h4><br>");
 	var titleData = titleTemplate({
     	title: content.title
   	});
@@ -603,7 +599,13 @@ $( "#close" ).click(function() {
 
 </script>
 
+<script type="text/javascript">
+    $( "#close-intro" ).click(function() {
+    $("#intro").css("display", "none");
+    //$("#close").css("display", "none");
+});
 
+</script>
 
 </body>
 </html>

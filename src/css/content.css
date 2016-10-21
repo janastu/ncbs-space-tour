@@ -5,8 +5,28 @@
   border: 3px;
   border-style: solid;
     border-color: #000000;
-     box-shadow: 2px 2px 3px grey;
+     /*box-shadow: 2px 2px 3px grey;*/
+     position: fixed;
+     z-index: 100;
+     top:50%;
     }
+
+#close-intro{
+    top:4%;
+    left:97.8%;
+    z-index: 100;
+    background-color: #ffffff;
+    position: absolute;
+    color: black;
+  
+    font-size: 20px;
+     cursor: pointer; 
+     cursor: hand; 
+
+
+
+}
+
 
 
 #panorama {
@@ -20,7 +40,7 @@
 
 .narration {
     position: absolute;
-    top:12%;
+    top:14%;
     width: 40vw;
     min-width: 300px;
     
@@ -179,7 +199,7 @@ h3 {
     position: absolute;
     color: black;
   
-    font-size: 30px;
+    font-size: 20px;
      cursor: pointer; 
      cursor: hand; 
 }

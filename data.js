@@ -14,7 +14,7 @@ var data = [
 		title: 'The reprint pile',
 		description: 'Back in the day when it wasnt easy to just print copies of journal articles off the web, reprints carried a lot of currency. Obaid Siddiqi continued to maintain a pile of reprints in his office and an even bigger set in his lab, in alphabetical order of main author. He would then loan them out to new students. Deepti Trivedi recounts.',
 		urls: [
-		'content/office/deepti_labtour-trainee_SPACE-TOUR.mp3'
+		'content/office/deepti_labtour-reprints_SPACE-TOUR.mp3'
 		] 
 	},
 	{
@@ -29,18 +29,20 @@ var data = [
 	{
 		id: 'patch',
 		title: 'Patch clamp lab',
-		description: 'Deepti Trivedis remarks upon seeing her handwriting and Obaid Siddiqis handwriting in the lab, more than a decade after she passed through the lab. "During the time we were trying to find different ion channels that are present in Drosophila neurons at different stages of development. These were acute cultures of Drosophila larval and adult neurons kept in dishes for specific amounts of time. The cells were patched by the patch pipettes where the glass of the pipette forms a high resistance seal with the cell membrane so that no current can leak through the seal. This ensures that whatever current that is recorded by the patch pipette is a result of the channels that are present in the piece of membrane around which the high resistance seal is formed. If one destroys that piece of membrane by force, then the pipette is able access the whole cell and hence the currents then measured represent the combined activity of the whole cell." ',
+		description: 'Deepti Trivedi remarks upon seeing her handwriting on a white board and above a set of cables, more than a decade after she passed through the lab. She also notices the handwriting of Obaid Siddiqi. Her comments about her work in the lab: "During the time we were trying to find different ion channels that are present in Drosophila neurons at different stages of development. These were acute cultures of Drosophila larval and adult neurons kept in dishes for specific amounts of time. The cells were patched by the patch pipettes where the glass of the pipette forms a high resistance seal with the cell membrane so that no current can leak through the seal. This ensures that whatever current that is recorded by the patch pipette is a result of the channels that are present in the piece of membrane around which the high resistance seal is formed. If one destroys that piece of membrane by force, then the pipette is able access the whole cell and hence the currents then measured represent the combined activity of the whole cell." ',
 		urls: [
 		'content/1/deepti_labtour-patch-clamp-wires_SPACE-TOUR.mp3',
-		'content/1/OS Lab - Cables repo.jpg',
+		'content/1/OS Lab - Whiteboard scribbles - 2.jpg',
 		'content/1/OS Lab - Deepti wires.jpg',
-		'content/1/OS Lab - Whiteboard scribbles - 2.jpg'
+		'content/1/OS Lab - Cables repo.jpg'
+		
+		
 		] 
 	},
 	{
 		id: 'staff',
 		title: 'Interaction with support staff in Obaid Siddiqis Lab',
-		description: 'Deepti Trivedi shares her memories of discussions between Obaid Siddiqi and Sunil Prabhakar, who joined Siddiqis lab as an assistant, offering technical assistance for fly behavior experiments, stock keeping and management of laboratory consumables. ',
+		description: 'Deepti Trivedi shares her memories of discussions between Obaid Siddiqi and Sunil Prabhakar, who joined the Siddiqi lab as an assistant, offering technical assistance for fly behavior experiments, stock keeping and management of laboratory consumables. ',
 		urls: [
 		'content/1/deepti_labtour-prabhakar_INTERSECTION-STAFF.mp3',
 		'content/1/OS Lab - Sunil Prabhakar citation.jpg'
@@ -80,7 +82,7 @@ var data = [
 	{
 		id: 'flood',
 		title: 'The 1999 flood',
-		description: 'A flood in 1999 in Obaid Siddiqi’s lab led to water above the ankles, and damaging a lot of previous material. Deepti Trivedi, a former student, recounts the event.',
+		description: 'A flood in 1999 in the Siddiqi lab led to water above the ankles, and damaging a lot of previous material. Deepti Trivedi, a former student, recounts the event.',
 		urls: [
 		'content/3/deepti_labtour-flood_SPACE-TOUR.mp3'
 		] 
@@ -96,7 +98,7 @@ var data = [
 	{
 		id: 'maze',
 		title: 'Fly maze apparatus',
-		description: 'The lab bench of Mohammed bin Abu Baker, Obaid Siddiqi`s last PhD student at NCBS',
+		description: 'T-traps were used for odour preference assays for Drosophila. One of the arms of the T-trap has an odorant while the other one is a control. Flies are let in from the third arm and allowed to roam around. The flies that are attracted by the specific odor (either because of innate preference or because of pre-conditioning) will go towards that arm. The trap is made in a way that once the fly enters one arm it is difficult to come out. At the end of the assay, the total number of flies in each arm is counted. The principle is same as Y-maze, but this assay proved to be less cumbersome and time consuming. Deepti Trivedi narrates some memories from her time in the lab.',
 		urls: [
 		'content/4/deepti_labtour-fly-maze-glass_SPACE-TOUR.mp3',
 		'content/4/OS Lab - Behavior - Maze - 1.jpg',
@@ -107,7 +109,7 @@ var data = [
 	{
 		id: 'spaces',
 		title: 'Lab Spaces',
-		description: 'Glimpses of Obaid Siddiqi`s lab. It is not in use at this point. ',
+		description: 'Glimpses of Obaid Siddiqi`s lab.',
 		urls: [
 		'content/4/OS Lab - Chemical bench.jpg',
 		'content/4/OS Lab - Microscopes.jpg'
