@@ -150,9 +150,6 @@ scrollEffect();
             </div>
 
 
-<!-- footer spacing -->
-			<br><br>
-
 
 
 <!-- footer -->
@@ -558,11 +555,11 @@ if(name.indexOf('&') > -1)
     //document.getElementById('title').style.display='block';  
     //document.getElementById('close').style.display='block'; 
     if($("#narration").hasClass('movein')) {
-        console.log('has');
+        
         $('#narration').removeClass('movein');
     }
     else{
-        console.log('doesnt');
+       
         $('#narration').removeClass('moveout');
         $('#narration').addClass('movein');
     }
@@ -585,11 +582,11 @@ $( "#close" ).click(function() {
  //$("#narration").css("display", "none");
  window.location.hash="panorama";
  if($("#narration").hasClass('moveout')) {
-        console.log('has');
+       
         $('#narration').removeClass('moveout');
     }
     else{
-        console.log('doesnt');
+        
         $('#narration').removeClass('movein');
         $('#narration').addClass('moveout');
     }
