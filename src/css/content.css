@@ -35,7 +35,10 @@
     font-size: 34px;
 margin-left: 44%;
 color: darkcyan;
+cursor: pointer; 
+     cursor: hand; 
 }
+
 
 
 #panorama {
@@ -158,10 +161,13 @@ h3 {
     height: 350px;
     max-height: 350px;
     width: 100%;
+    
+     
+}
    
 
 
-}
+    
 
 .title-text {
     font-weight: bold;

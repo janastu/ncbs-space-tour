@@ -537,7 +537,7 @@ template = function(id){
         appendToDom(icon, "audio");
 
     }
-    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img  class='img' style='border:10px solid #000000;' src='<%=item%>'>"+
+    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img  class='img' style='cursor: pointer; border:10px solid #000000;' src='<%=item%>'>"+
                 "</div></div><br><br>");
     var audioTemplate = _.template("<div class='audio-container'><center><audio controls preload='auto' >"+
                 "<source src='<%=url%>'> type='audio/mpeg'>"+
@@ -575,11 +575,18 @@ template = function(id){
         }
 
     }
-    
+    window.clickCount = 0;
     function bindEvent(){
         $(".audio-player-trigger").on("click", function(event){
+            if (clickCount == 0){
             var audioPlayerDom = audioTemplate(event.target.dataset);
             $('#audio-bar').append(audioPlayerDom);
+            clickCount++;
+        }
+        else
+        {
+
+        }
         });
     }
 	//document.getElementById("contents").innerHTML = contentData
