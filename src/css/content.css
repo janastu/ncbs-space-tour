@@ -27,6 +27,16 @@
 
 }
 
+.audio-container{
+    background-color: #fff;
+    width: 100%;
+    position:fixed; bottom:0px;
+}
+.audio-player-trigger{
+    font-size: 34px;
+margin-left: 44%;
+color: darkcyan;
+}
 
 
 #panorama {

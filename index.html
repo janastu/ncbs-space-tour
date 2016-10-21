@@ -13,6 +13,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 		<link type="text/css" rel="stylesheet" href="src/css/bootstrap.css" />
 		<link type="text/css" rel="stylesheet" href="src/css/header.css" />
 		<link type="text/css" rel="stylesheet" href="src/css/main.css" />
+        <link rel="stylesheet" href="src/js/font-awesome-4.6.3/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="src/css/pannellum.css"/>
 
@@ -519,24 +520,47 @@ template = function(id){
 	//setup content
 	var contentTemplate = _.template(
 	"<div id='space-at-the-top' class='space-at-the-top'></div>"+
-	"<p class='description'><%=des%></p>"+
-	"<% _.each(url, function(item, index, url) {var format=item.substr(item.length - 3);"+
-			"if( format === 'mp3') {%>"+
-				"</div></div><br><br>"+
-    			"<center><audio controls style='box-shadow: 10px 10px 5px grey;'>"+
-    			"<source src='<%=item%>'> type='audio/mpeg'>"+
-    			"</audio></center>"+ 
-			"<% } else { %>"+
-				"<div class='image-container'><div class='img-holder'><img  style='border:10px solid #000000;' src='<%=item%>'>"+
-				"</div></div><br><br>"+
-			" <% } });  %>"+
-			"</div></div><br><br><br><br><br><br>"
+	"<p class='description'><%=des%></p>"
+	
 	);
 	var contentData = contentTemplate({
-    	des: content.description,
-    	url: content.urls
+    	des: content.description
   	});
-	document.getElementById("contents").innerHTML = contentData
+    appendToDom(contentData, "description");
+
+    if(content.urls.audio){
+        var icon = '<i class="fa fa-play-circle audio-player-trigger" aria-hidden="true" data-url='+content.urls.audio+'></i>';
+        appendToDom(icon, "audio");
+
+    }
+    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img  style='border:10px solid #000000;' src='<%=item%>'>"+
+                "</div></div><br><br>");
+    var audioTemplate = _.template("<div class='audio-container'><center><audio controls style='box-shadow: 10px 10px 5px grey;'>"+
+                "<source src='<%=url%>'> type='audio/mpeg'>"+
+                "</audio></center></div>"); 
+
+    if(content.urls.img){
+        _.each(content.urls.img, function(item){
+            var imgElm = imgTemplate({item:item});
+            appendToDom(imgElm, "img");
+        }, this);
+    }
+
+    function appendToDom(elm, type){
+        $("#contents").append(elm);
+        if(type == "audio"){
+            console.log("binding wvw");
+            bindEvent();
+        }
+    }
+    
+    function bindEvent(){
+        $(".audio-player-trigger").on("click", function(event){
+            var audioPlayerDom = audioTemplate(event.target.dataset);
+            $('body').append(audioPlayerDom);
+        });
+    }
+	//document.getElementById("contents").innerHTML = contentData
 };
 
 </script>
