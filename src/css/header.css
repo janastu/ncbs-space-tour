@@ -104,7 +104,9 @@ section {
 /* =Info Bar
 -------------------------------------------------------------- */
 #info-bar {
-  background-color: #3cb5f9; }
+  background-color: #3cb5f9; 
+z-index: -10;
+}
   #info-bar a {
     color: white;
     font-size: 14px;

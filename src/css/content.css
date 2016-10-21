@@ -28,9 +28,8 @@
 }
 
 .audio-container{
-    background-color: #fff;
-    width: 100%;
-    position:fixed; bottom:0px;
+    position: relative;
+    left: 15px;
 }
 .audio-player-trigger{
     font-size: 34px;
@@ -220,3 +219,15 @@ h3 {
     border-color: #000000;*/
     background-color: #D6D6D6;  
 }
+
+#audio-bar{
+
+
+    position:fixed;
+    bottom:0px;
+    z-index: 100;
+    width: 100%;
+    background-color: black;
+    background-color: rgba(0,0,0,0);
+
+    }

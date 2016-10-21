@@ -14,6 +14,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 		<link type="text/css" rel="stylesheet" href="src/css/header.css" />
 		<link type="text/css" rel="stylesheet" href="src/css/main.css" />
         <link rel="stylesheet" href="src/js/font-awesome-4.6.3/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="src/css/imageviewer.css" />
 
 	<link rel="stylesheet" href="src/css/pannellum.css"/>
 
@@ -27,6 +28,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
     <script type="text/javascript" src="src/js/routie.js"></script>
 
     <script type="text/javascript" src="src/js/classie.js"></script>
+    <script type="text/javascript" src="src/js/imageviewer.min.js"></script>    
 
     
     
@@ -148,6 +150,7 @@ scrollEffect();
                     </div>
 
                 </div>
+                <div id='audio-bar'></div>
             </div>
 
 
@@ -501,7 +504,8 @@ template = function(id){
 	
 	//clear previous content
 	$("#title").innerHTML = '';
-	$("#contents").innerHTML = '';
+	//$("#contents").innerHTML = '';
+    $("#contents").html('');
 
 
 	//filter data
@@ -533,9 +537,9 @@ template = function(id){
         appendToDom(icon, "audio");
 
     }
-    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img  style='border:10px solid #000000;' src='<%=item%>'>"+
+    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img  class='img' style='border:10px solid #000000;' src='<%=item%>'>"+
                 "</div></div><br><br>");
-    var audioTemplate = _.template("<div class='audio-container'><center><audio controls style='box-shadow: 10px 10px 5px grey;'>"+
+    var audioTemplate = _.template("<div class='audio-container'><center><audio controls preload='auto' >"+
                 "<source src='<%=url%>'> type='audio/mpeg'>"+
                 "</audio></center></div>"); 
 
@@ -548,16 +552,34 @@ template = function(id){
 
     function appendToDom(elm, type){
         $("#contents").append(elm);
+
         if(type == "audio"){
-            console.log("binding wvw");
+           if($('.audio-container').length != '0')
+            {
+                $('.audio-container').remove();
+            }
+            
+            
             bindEvent();
         }
+
+        if(type == 'img'){
+            
+            $(".img").on("click", function(event){
+            console.log('ss');
+            var viewer = ImageViewer(); //options is optional parameter
+            var source = this.src;
+            viewer.show(source);
+        });
+
+        }
+
     }
     
     function bindEvent(){
         $(".audio-player-trigger").on("click", function(event){
             var audioPlayerDom = audioTemplate(event.target.dataset);
-            $('body').append(audioPlayerDom);
+            $('#audio-bar').append(audioPlayerDom);
         });
     }
 	//document.getElementById("contents").innerHTML = contentData
@@ -580,7 +602,7 @@ if(name.indexOf('&') > -1)
     //document.getElementById('close').style.display='block'; 
     if($("#narration").hasClass('movein')) {
         
-        $('#narration').removeClass('movein');
+        //$('#narration').removeClass('movein');
     }
     else{
        
