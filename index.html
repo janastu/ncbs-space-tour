@@ -19,7 +19,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 	<link rel="stylesheet" href="src/css/pannellum.css"/>
 
     <link rel="stylesheet" href="src/css/content.css"/>
- 
+
 
     <script type="text/javascript" src="src/js/jquery.min.js"></script>
 
@@ -28,21 +28,24 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
     <script type="text/javascript" src="src/js/routie.js"></script>
 
     <script type="text/javascript" src="src/js/classie.js"></script>
-    <script type="text/javascript" src="src/js/imageviewer.min.js"></script>    
+    <script type="text/javascript" src="src/js/imageviewer.min.js"></script>
 
-    
-    
+
+
     <script type="text/javascript" src="src/js/underscore-min.js"></script>
-    
-    
+
+
 
     <script type="text/javascript" src="src/js/pannellum.js"></script>
     <script type="text/javascript" src="src/js/libpannellum.js"></script>
     <script type="text/javascript" src="src/js/RequestAnimationFrame.js"></script>
 
     <script type="text/javascript" src="data.js"></script>
-   
+
+    <script type="text/javascript" src="src/js/modernizr.webgl.js"></script>
+
 </head>
+
 
 
 
@@ -51,7 +54,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 
 <script type="text/javascript">
         function scrollEffect(){
-            
+
             window.addEventListener('scroll', function(e){
             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                 shrinkOn = 25,
@@ -69,7 +72,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
         };
 
 scrollEffect();
-    
+
 </script>
 
 
@@ -79,7 +82,7 @@ scrollEffect();
 <div class="container-fluid">
         <div class="row-fluid">
             <!-- Header from templates/header.html and app.js -->
-                
+
 <header>
     <div class="container clearfix">
         <h1 id="logo">
@@ -92,8 +95,8 @@ scrollEffect();
                 </ul>
                   <a href="https://www.ncbs.res.in/ncbs25/#about" target="">About</a>
                   <a href="https://www.ncbs.res.in/" target="_blank">NCBS</a>
-                  
-            
+
+
         </nav>
     </div>
 </header><!-- /header -->
@@ -124,25 +127,26 @@ scrollEffect();
 
 
 
-        
+
                 <div id='intro'>
                     <div id = 'close-intro'>X</div>
 	               <h4><br><br><b>Space Tour</b> offers a mash-up of oral histories, archival documents and contemporary spatial mapping techniques. The current tour is Obaid Siddiqi's office and lab, with the memories of Deepti Trivedi, a former student. Click on the information icon and arrows to navigate. Future developments will layer other people's memories and will be tours of other places.</h4>
                    </div>
             </div>
-        
+
 
 
 <!--Panorama-->
 <div id='panorama'>
+
                 <!-- Narration-->
                 <div id="narration" class="narration">
                     <!--Title-->
                     <div id="title" class="title-text">
-                        
+
                     </div>
                     <div id="contents">
-                            
+
                     </div>
                     <!-- Close button -->
                     <div id="close">
@@ -159,7 +163,7 @@ scrollEffect();
 <!-- footer -->
 <div class="row-fluid">
     <div class="col-md-12">
-        
+
         <div id="footer">
 
 
@@ -171,14 +175,14 @@ scrollEffect();
 </div>
     <div class="col-lg-offset-1" style="display:flex;">
 
-    <a href="https://www.ncbs.res.in/ncbs25/#identity" target="">   
+    <a href="https://www.ncbs.res.in/ncbs25/#identity" target="">
     <div class="panel panel-ncbs-foot">
          <div class="panel-body">
             <div class="sub-theme-nav-item">
-                
+
                     <img src="img/Assets/identity.png" alt="category_identity" class="img-thumbnail" />
-                
-            
+
+
             </div>
         </div>
     </div>
@@ -189,9 +193,9 @@ scrollEffect();
         <div class="panel panel-ncbs-foot">
              <div class="panel-body">
                 <div class="sub-theme-nav-item">
-                    
+
                         <img src="img/Assets/Institution_Building.png" alt="category_Institution_Building" class="img-thumbnail" style="margin-top:-5px;"/>
-                    
+
                 </div>
             </div>
         </div>
@@ -201,10 +205,10 @@ scrollEffect();
         <div class="panel panel-ncbs-foot">
              <div class="panel-body">
                 <div class="sub-theme-nav-item">
-                    
+
                    <img src="img/Assets/growth.png" alt="category_growth" class="img-thumbnail" style="margin-top:-5px; width:93px; margin-left:17px;"/>
-                
-                
+
+
                 </div>
             </div>
         </div>
@@ -234,9 +238,9 @@ scrollEffect();
         <div class="panel panel-ncbs-foot">
              <div class="panel-body">
                 <div class="sub-theme-nav-item">
-                    
+
                     <img src="img/Assets/ripple_effect.png" alt="category_ripple_effect" class="img-thumbnail" style="margin-top:-7px;"/>
-                
+
                 </div>
             </div>
         </div>
@@ -246,9 +250,9 @@ scrollEffect();
         <div class="panel panel-ncbs-foot">
              <div class="panel-body">
                 <div class="sub-theme-nav-item">
-                    
+
                     <img src="img/Assets/intersections.png" alt="category_intersections" class="img-thumbnail"/>
-                
+
                 </div>
             </div>
         </div>
@@ -256,7 +260,7 @@ scrollEffect();
     </a>
     <br />
     <hr />
-    
+
 </div>
 <div class="col-sm-12">
     <div class="text-center" style="margin-top:15px; font-family: roboto;">
@@ -273,9 +277,9 @@ scrollEffect();
         <h4 class="modal-title" id="myModalLabel" style="font-family: roboto; ">User Agreement</h4>
       </div>
       <div class="modal-body">
-     
 
-     <p>This NCBS@25 digital exhibit contains records (images, audio and video excerpts, text) under copyright or under third party ownership. These records are given on loan to NCBS for the purposes of this exhibit. Material may only be reproduced with the explicit permission of the record owners, as mentioned in the caption for each image, and audio and video clip. The NCBS@25 About page has contact details. Any document without ownership details in the caption is in the public domain. Please respect the honour code and the generosity of the donors in sharing this material with a wider audience. 
+
+     <p>This NCBS@25 digital exhibit contains records (images, audio and video excerpts, text) under copyright or under third party ownership. These records are given on loan to NCBS for the purposes of this exhibit. Material may only be reproduced with the explicit permission of the record owners, as mentioned in the caption for each image, and audio and video clip. The NCBS@25 About page has contact details. Any document without ownership details in the caption is in the public domain. Please respect the honour code and the generosity of the donors in sharing this material with a wider audience.
      </p>
 
      <p>Please click "ACCEPT" if you agree to comply with these terms. If you do not agree to comply with these terms, click "DECLINE" after which you will be redirected to the NCBS home page.</p>
@@ -296,6 +300,69 @@ scrollEffect();
 
 <script>
 
+  //check for webgl
+
+
+if (Modernizr.webgl) {
+
+  //check for ie
+  //need to improve this
+  /**
+   * detect IE
+   * returns version of IE or false, if browser is not Internet Explorer
+   */
+  function detectIE() {
+    var ua = window.navigator.userAgent;
+
+    // Test values; Uncomment to check result …
+
+    // IE 10
+    // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
+
+    // IE 11
+    // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
+
+    // Edge 12 (Spartan)
+    // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
+
+    // Edge 13
+    // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
+
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0) {
+      // IE 10 or older => return version number
+      return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+
+    var trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+      // IE 11 => return version number
+      var rv = ua.indexOf('rv:');
+      return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+
+    var edge = ua.indexOf('Edge/');
+    if (edge > 0) {
+      // Edge (IE 12+) => return version number
+      return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    }
+
+    // other browser
+    return false;
+  }
+
+  var version = detectIE();
+
+  if (version === false) {
+
+  } else if (version >= 12) {
+
+  } else {
+    alert("Looks like you are using a browser that is not supported by space-tour. To experience space-tour please use the latest version of Chrome or Firefox");
+  }
+
+
+//pannellum viewer
 pannellum.viewer('panorama', {
 
     "default": {
@@ -310,7 +377,7 @@ pannellum.viewer('panorama', {
     	"compass":false
     	//"hotSpotDebug": true
     },
-    
+
     "scenes": {
         "siddiqi_office_hdr": {
             "title": "Obaid Siddiqi's Office ",
@@ -453,7 +520,7 @@ pannellum.viewer('panorama', {
                     "text": "The 1999 flood",
                     "URL": "#&q?i=flood"
                 }
-                
+
             ]
         },
 
@@ -493,16 +560,22 @@ pannellum.viewer('panorama', {
             ]
         }
 
-        
+
     }
 });
+}
+else
+{
+  alert("Looks like you're browser does not support WebGL. To experience space-tour fully, try using the latest version of chrome or firefox.");
+}
+
 </script>
 
 
 <script>
 //creates narrattion template
 template = function(id){
-	
+
 	//clear previous content
 	$("#title").innerHTML = '';
 	//$("#contents").innerHTML = '';
@@ -514,7 +587,7 @@ template = function(id){
   	return item.id === id;
 	});
 
-	
+
 	//setup title
 	var titleTemplate = _.template("<h4><%=title%></h4><br>");
 	var titleData = titleTemplate({
@@ -526,7 +599,7 @@ template = function(id){
 	var contentTemplate = _.template(
 	"<div id='space-at-the-top' class='space-at-the-top'></div>"+
 	"<p class='description'><%=des%></p>"
-	
+
 	);
 	var contentData = contentTemplate({
     	des: content.description
@@ -542,7 +615,7 @@ template = function(id){
                 "</div></div><br><br>");
     var audioTemplate = _.template("<div class='audio-container'><center><audio controls preload='auto' >"+
                 "<source src='<%=url%>'> type='audio/mpeg'>"+
-                "</audio></center></div>"); 
+                "</audio></center></div>");
 
     if(content.urls.img){
         _.each(content.urls.img, function(item){
@@ -559,13 +632,13 @@ template = function(id){
             {
                 $('.audio-container').remove();
             }
-            
-            
+
+
             bindEvent();
         }
 
         if(type == 'img'){
-            
+
             $(".img").on("click", function(event){
             console.log('ss');
             var viewer = ImageViewer(); //options is optional parameter
@@ -605,15 +678,15 @@ if(name.indexOf('&') > -1)
     window.temp = name.split('=');
     window.temp2 = temp[1];
     template(temp2);
-    //document.getElementById('narration').style.display='block'; 
-    //document.getElementById('title').style.display='block';  
-    //document.getElementById('close').style.display='block'; 
+    //document.getElementById('narration').style.display='block';
+    //document.getElementById('title').style.display='block';
+    //document.getElementById('close').style.display='block';
     if($("#narration").hasClass('movein')) {
-        
+
         //$('#narration').removeClass('movein');
     }
     else{
-       
+
         $('#narration').removeClass('moveout');
         $('#narration').addClass('movein');
     }
@@ -636,11 +709,11 @@ $( "#close" ).click(function() {
  //$("#narration").css("display", "none");
  window.location.hash="panorama";
  if($("#narration").hasClass('moveout')) {
-       
+
         $('#narration').removeClass('moveout');
     }
     else{
-        
+
         $('#narration').removeClass('movein');
         $('#narration').addClass('moveout');
     }
