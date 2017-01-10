@@ -566,6 +566,7 @@ pannellum.viewer('panorama', {
 }
 else
 {
+  $("#intro").css("display", "none");
   alert("Looks like you're browser does not support WebGL. To experience space-tour fully, try using the latest version of chrome or firefox.");
 }
 
@@ -613,7 +614,7 @@ template = function(id){
     }
     var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img  class='img' style='cursor: pointer; border:10px solid #000000;' src='<%=item%>'>"+
                 "</div></div><br><br>");
-    var audioTemplate = _.template("<div class='audio-container'><center><audio controls preload='auto' >"+
+    var audioTemplate = _.template("<div class='audio-container'><center><audio controls autoplay preload='auto' >"+
                 "<source src='<%=url%>'> type='audio/mpeg'>"+
                 "</audio></center></div>");
 
