@@ -14,6 +14,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 		<link type="text/css" rel="stylesheet" href="src/css/header.css" />
 		<link type="text/css" rel="stylesheet" href="src/css/main.css" />
         <link rel="stylesheet" href="src/js/font-awesome-4.6.3/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="src/js/ImageViewer-master/imageviewer.css" />
 
 	<link rel="stylesheet" href="src/css/pannellum.css"/>
 
@@ -66,19 +67,23 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
         });
         };
 
-scrollEffect();
+//scrollEffect();
     
 </script>
-
+<style>
+body {
+    overflow: hidden;
+}
+</style>
 
 <body>
 
 <!--Header-->
 <div class="container-fluid">
-        <div class="row-fluid">
+        <!--div class="row-fluid">
             <!-- Header from templates/header.html and app.js -->
                 
-<header>
+<!--header>
     <div class="container clearfix">
         <h1 id="logo">
           <a href="https://www.ncbs.res.in/ncbs25/" target="">
@@ -95,7 +100,7 @@ scrollEffect();
         </nav>
     </div>
 </header><!-- /header -->
-<ul class="nav nabar-nav" style=" position: fixed;
+<!--ul class="nav nabar-nav" style=" position: fixed;
     right: 3%; top:8px; font-weight:600;
     z-index: 1000; ">
       <li class="dropdown">
@@ -123,11 +128,11 @@ scrollEffect();
 
 
         
-                <div id='intro'>
+                <!--div id='intro'>
                     <div id = 'close-intro'>X</div>
 	               <h4><br><br><b>Space Tour</b> offers a mash-up of oral histories, archival documents and contemporary spatial mapping techniques. The current tour is Obaid Siddiqi's office and lab, with the memories of Deepti Trivedi, a former student. Click on the information icon and arrows to navigate. Future developments will layer other people's memories and will be tours of other places.</h4>
                    </div>
-            </div>
+            </div-->
         
 
 
@@ -153,107 +158,6 @@ scrollEffect();
 
 
 
-<!-- footer -->
-<div class="row-fluid">
-    <div class="col-md-12">
-        
-        <div id="footer">
-
-
-<div class="row" id="ncbs-nav-footer">
-    <div class="col-lg-offset-1">
-        <div style="font-family: roboto;font-size: 24px;margin: 2px; color:#333726;">
-             <p>THEMES</p>
-</div>
-</div>
-    <div class="col-lg-offset-1" style="display:flex;">
-
-    <a href="https://www.ncbs.res.in/ncbs25/#identity" target="">   
-    <div class="panel panel-ncbs-foot">
-         <div class="panel-body">
-            <div class="sub-theme-nav-item">
-                
-                    <img src="img/Assets/identity.png" alt="category_identity" class="img-thumbnail" />
-                
-            
-            </div>
-        </div>
-    </div>
-    <div class="ncbs-foot-nav-text  text-center">Identity</div>
-    </a>
-
-    <a href="https://www.ncbs.res.in/ncbs25/#institution-building" target="">
-        <div class="panel panel-ncbs-foot">
-             <div class="panel-body">
-                <div class="sub-theme-nav-item">
-                    
-                        <img src="img/Assets/Institution_Building.png" alt="category_Institution_Building" class="img-thumbnail" style="margin-top:-5px;"/>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="ncbs-foot-nav-text  text-center">Institution Building</div>
-        </a>
-        <a href="https://www.ncbs.res.in/ncbs25/#growth" target="">
-        <div class="panel panel-ncbs-foot">
-             <div class="panel-body">
-                <div class="sub-theme-nav-item">
-                    
-                    <img src="img/Assets/identity.png" alt="category_growth" class="img-thumbnail" style="margin-top:-5px;"/>
-                
-                </div>
-            </div>
-        </div>
-        <div class="ncbs-foot-nav-text   text-center">Growth</div>
-        </a>
-        <a href="https://www.ncbs.res.in/ncbs25/#research" target="">
-        <div class="panel panel-ncbs-foot">
-             <div class="panel-body">
-                <div class="sub-theme-nav-item">
-                    <img src="img/Assets/research-1.png" alt="category_research" class="img-thumbnail" style="width: 90px; margin-left: 15px;"/>
-                </div>
-            </div>
-        </div>
-        <div class="ncbs-foot-nav-text  text-center">Research</div>
-        </a>
-        <a href="https://www.ncbs.res.in/ncbs25/#education" target="">
-        <div class="panel panel-ncbs-foot">
-             <div class="panel-body">
-                <div class="sub-theme-nav-item">
-                    <img src="img/Assets/education.png" alt="category_education" class="img-thumbnail" style="margin-top:26px;"/>
-                </div>
-            </div>
-        </div>
-        <div class="ncbs-foot-nav-text  text-center">Education</div>
-        </a>
-        <a href="https://www.ncbs.res.in/ncbs25/#ripple-effect" target="">
-        <div class="panel panel-ncbs-foot">
-             <div class="panel-body">
-                <div class="sub-theme-nav-item">
-                    
-                    <img src="img/Assets/ripple_effect.png" alt="category_ripple_effect" class="img-thumbnail" style="margin-top:-7px;"/>
-                
-                </div>
-            </div>
-        </div>
-        <div class="ncbs-foot-nav-text  text-center">Ripple Effect</div>
-        </a>
-        <a href="https://www.ncbs.res.in/ncbs25/#intersections" target="">
-        <div class="panel panel-ncbs-foot">
-             <div class="panel-body">
-                <div class="sub-theme-nav-item">
-                    
-                    <img src="img/Assets/intersections.png" alt="category_intersections" class="img-thumbnail"/>
-                
-                </div>
-            </div>
-        </div>
-        <div class="ncbs-foot-nav-text  text-center">Intersections</div>
-    </a>
-    <br />
-    <hr />
-    
-</div>
 <div class="col-sm-12">
     <div class="text-center" style="margin-top:15px; font-family: roboto;">
         <a data-toggle="modal" data-target="#ncbs-content-policy" style="cursor: pointer;     color: #333726;">copyright &copy 2016</a>
@@ -495,6 +399,9 @@ pannellum.viewer('panorama', {
 </script>
 
 
+
+<script type="text/javascript" src="src/js/ImageViewer-master/imageviewer.min.js"></script>
+
 <script>
 //creates narrattion template
 template = function(id){
@@ -511,7 +418,7 @@ template = function(id){
 
 	
 	//setup title
-	var titleTemplate = _.template("<h4><%=title%></h4><br>");
+	var titleTemplate = _.template("<h3><%=title%></h3>");
 	var titleData = titleTemplate({
     	title: content.title
   	});
@@ -533,9 +440,9 @@ template = function(id){
         appendToDom(icon, "audio");
 
     }
-    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img  style='border:10px solid #000000;' src='<%=item%>'>"+
+    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img src='<%=item%>'>"+
                 "</div></div><br><br>");
-    var audioTemplate = _.template("<div class='audio-container'><center><audio controls style='box-shadow: 10px 10px 5px grey;'>"+
+    var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
                 "<source src='<%=url%>'> type='audio/mpeg'>"+
                 "</audio></center></div>"); 
 
@@ -549,19 +456,33 @@ template = function(id){
     function appendToDom(elm, type){
         $("#contents").append(elm);
         if(type == "audio"){
-            console.log("binding wvw");
-            bindEvent();
+            bindAudioEvent();
+        }
+        if(type =="img"){
+            imgViewer();
         }
     }
     
-    function bindEvent(){
+    function bindAudioEvent(){
         $(".audio-player-trigger").on("click", function(event){
             var audioPlayerDom = audioTemplate(event.target.dataset);
             $('body').append(audioPlayerDom);
         });
     }
+    function imgViewer() {
+        console.log("binding wvw");
+       viewer = ImageViewer();
+           $(".img-holder img").on('click', function () {
+            console.log(this.src);
+               var imgSrc = this.src;
+                   //highResolutionImage = $(this).data('high-res-img');
+        
+               viewer.show(imgSrc);
+    });
+       }
 	//document.getElementById("contents").innerHTML = contentData
-};
+}
+
 
 </script>
 
@@ -628,5 +549,7 @@ $( "#close" ).click(function() {
 
 </script>
 
+
 </body>
+
 </html>
