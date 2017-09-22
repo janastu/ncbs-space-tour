@@ -159,7 +159,7 @@ body {
 
 
 <div class="col-sm-12">
-    <div class="text-center" style="margin-top:15px; font-family: roboto;">
+    <div class="text-center" style="margin-top:15px; font-family: 'Open Sans', sans-serif;">
         <a data-toggle="modal" data-target="#ncbs-content-policy" style="cursor: pointer;     color: #333726;">copyright &copy 2016</a>
     </div>
 </div>
@@ -167,10 +167,10 @@ body {
 <!-- Modal -->
 <div class="modal fade" id="ncbs-content-policy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: roboto; border-radius:0px; color:darkcyan; background-color: #f2f2f2;">
+    <div class="modal-content" style="font-family: 'Open Sans', sans-serif; border-radius:0px; color:darkcyan; background-color: #f2f2f2;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" style="font-family: roboto; ">User Agreement</h4>
+        <h4 class="modal-title" id="myModalLabel" style="font-family: 'Open Sans', sans-serif; ">User Agreement</h4>
       </div>
       <div class="modal-body">
      
@@ -402,7 +402,7 @@ pannellum.viewer('panorama', {
 
 <script type="text/javascript" src="src/js/ImageViewer-master/imageviewer.min.js"></script>
 
-<script>
+<script type="text/javascript">
 //creates narrattion template
 template = function(id){
 	
@@ -436,7 +436,8 @@ template = function(id){
     appendToDom(contentData, "description");
 
     if(content.urls.audio){
-        var icon = '<i class="fa fa-play-circle audio-player-trigger" aria-hidden="true" data-url='+content.urls.audio+'></i>';
+        console.log(content.urls.audio, "audio present");
+        var icon = "<span class='audio-player-trigger' data-component='audio' aria-hidden='true' data-url= '"+content.urls.audio+"'><img src='imgs/components/small-sound.svg' onmouseover='this.src='imgs/components/small-sound-hover.svg'; onmouseout='this.src='imgs/components/small-sound.svg';</span>";
         appendToDom(icon, "audio");
 
     }
@@ -459,17 +460,18 @@ template = function(id){
             bindAudioEvent();
         }
         if(type =="img"){
-            imgViewer();
+           // imgViewer();
         }
     }
     
     function bindAudioEvent(){
         $(".audio-player-trigger").on("click", function(event){
-            var audioPlayerDom = audioTemplate(event.target.dataset);
+            console.log(event.currentTarget, event);
+            var audioPlayerDom = audioTemplate(event.currentTarget.dataset);
             $('body').append(audioPlayerDom);
         });
     }
-    function imgViewer() {
+   /* function imgViewer() {
         console.log("binding wvw");
        viewer = ImageViewer();
            $(".img-holder img").on('click', function () {
@@ -479,7 +481,7 @@ template = function(id){
         
                viewer.show(imgSrc);
     });
-       }
+       }*/
 	//document.getElementById("contents").innerHTML = contentData
 }
 
