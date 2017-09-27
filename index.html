@@ -140,6 +140,12 @@ body {
 <div id='panorama'>
                 <!-- Narration-->
                 <div id="narration" class="narration">
+
+                    <!-- Close button -->
+                    <div id="close">
+                       <div class="pull-right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    </div>
+
                     <!--Title-->
                     <div id="title" class="title-text">
                         
@@ -147,10 +153,7 @@ body {
                     <div id="contents">
                             
                     </div>
-                    <!-- Close button -->
-                    <div id="close">
-                       <div class="pull-right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                    </div>
+                    
 
                 </div>
             </div>
@@ -405,10 +408,11 @@ pannellum.viewer('panorama', {
 <script type="text/javascript">
 //creates narrattion template
 template = function(id){
-	
+	var titleDOM = $("#title");
+    var contentsDOM = $("#contents");
 	//clear previous content
-	$("#title").innerHTML = '';
-	$("#contents").innerHTML = '';
+	titleDOM.html('');
+	contentsDOM.html('');
 
 
 	//filter data
@@ -422,7 +426,7 @@ template = function(id){
 	var titleData = titleTemplate({
     	title: content.title
   	});
-	document.getElementById("title").innerHTML = titleData
+	titleDOM.append(titleData);
 
 	//setup content
 	var contentTemplate = _.template(
@@ -433,31 +437,36 @@ template = function(id){
 	var contentData = contentTemplate({
     	des: content.description
   	});
-    appendToDom(contentData, "description");
+    contentsDOM.append(contentData);
+    //appendToDom(contentData, "description");
 
     if(content.urls.audio){
+        var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
+                    "<source src='<%=url%>'> type='audio/mpeg'>"+
+                    "</audio></center></div>");
         console.log(content.urls.audio, "audio present");
-        var icon = "<span class='audio-player-trigger' data-component='audio' aria-hidden='true' data-url= '"+content.urls.audio+"'><img src='imgs/components/small-sound.svg' onmouseover='this.src='imgs/components/small-sound-hover.svg'; onmouseout='this.src='imgs/components/small-sound.svg';</span>";
-        appendToDom(icon, "audio");
+        var audioPlayerDom = audioTemplate({url: content.urls.audio});
+        contentsDOM.append(audioPlayerDom);
+
+       /* var icon = "<span class='audio-player-trigger' data-component='audio' aria-hidden='true' data-url= '"+content.urls.audio+"'><img src='imgs/components/small-sound.svg' onmouseover='this.src='imgs/components/small-sound-hover.svg'; onmouseout='this.src='imgs/components/small-sound.svg';</span>";
+        appendToDom(icon, "audio");*/
 
     }
     var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img src='<%=item%>'>"+
                 "</div></div><br><br>");
-    var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
-                "<source src='<%=url%>'> type='audio/mpeg'>"+
-                "</audio></center></div>"); 
+    
 
     if(content.urls.img){
         _.each(content.urls.img, function(item){
             var imgElm = imgTemplate({item:item});
-            appendToDom(imgElm, "img");
+            contentsDOM.append(imgElm);
         }, this);
     }
 
     function appendToDom(elm, type){
         $("#contents").append(elm);
         if(type == "audio"){
-            bindAudioEvent();
+           // bindAudioEvent();
         }
         if(type =="img"){
            // imgViewer();
@@ -468,7 +477,7 @@ template = function(id){
         $(".audio-player-trigger").on("click", function(event){
             console.log(event.currentTarget, event);
             var audioPlayerDom = audioTemplate(event.currentTarget.dataset);
-            $('body').append(audioPlayerDom);
+            $('#contents').append(audioPlayerDom);
         });
     }
    /* function imgViewer() {
