@@ -501,29 +501,16 @@ template = function(id){
 <script>
 //show
  routie('*/:name?', function(name) {
-
+    var sidebar = $("#narration");
 if(name.indexOf('&') > -1)
 {
     window.temp = name.split('=');
     window.temp2 = temp[1];
     template(temp2);
-    //document.getElementById('narration').style.display='block'; 
-    //document.getElementById('title').style.display='block';  
-    //document.getElementById('close').style.display='block'; 
-    if($("#narration").hasClass('movein')) {
-        
-        $('#narration').removeClass('movein');
+    if(!sidebar.hasClass('movein')) {
+        sidebar.removeClass('moveout');
+        sidebar.addClass('movein');
     }
-    else{
-       
-        $('#narration').removeClass('moveout');
-        $('#narration').addClass('movein');
-    }
-}
-
-
-else if(name =='panorama'){
-    window.location.hash="panorama";
 }
 else
     window.location.hash="";
