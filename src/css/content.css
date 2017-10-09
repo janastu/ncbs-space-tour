@@ -71,6 +71,7 @@ body {
         left: -605px;
         font-size: 18px;
         padding: 20px;
+        overflow-y: scroll;
 
     }
     .movein {
@@ -157,8 +158,8 @@ h3 {
 
 .title-text {
     font-weight: bold;
-    text-align: center;
-    margin: 10px;
+    text-align: left;
+    margin: 17px;
 }
 
 .chapter-header {
