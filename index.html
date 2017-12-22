@@ -21,25 +21,10 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
     <link rel="stylesheet" href="src/css/content.css"/>
  
 
-    <script type="text/javascript" src="src/js/jquery.min.js"></script>
+    <!-- audio player css-->
+    <link href="js/libs/jplayer/skin/pink.flag/css/jplayer.pink.flag.css" rel="stylesheet">
 
-    <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="src/js/routie.js"></script>
-
-    <script type="text/javascript" src="src/js/classie.js"></script>
-
-    
-    
-    <script type="text/javascript" src="src/js/underscore-min.js"></script>
-    
-    
-
-    <script type="text/javascript" src="src/js/pannellum.js"></script>
-    <script type="text/javascript" src="src/js/libpannellum.js"></script>
-    <script type="text/javascript" src="src/js/RequestAnimationFrame.js"></script>
-
-    <script type="text/javascript" src="data.js"></script>
    
 </head>
 
@@ -48,28 +33,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 
 
 
-<script type="text/javascript">
-        function scrollEffect(){
-            
-            window.addEventListener('scroll', function(e){
-            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 25,
-                header = document.querySelector("header");
-            if (distanceY > shrinkOn) {
-                classie.add(header,"smaller");
-                //$("#ncbs-home-text-collapsible").hide();
-            } else {
-                //$("#ncbs-home-text-collapsible").show();
-                if (classie.has(header,"smaller")) {
-                    classie.remove(header,"smaller");
-                }
-            }
-        });
-        };
 
-//scrollEffect();
-    
-</script>
 <style>
 body {
     overflow: hidden;
@@ -78,140 +42,262 @@ body {
 
 <body>
 
-<!--Header-->
-<div class="">
-        <!--div class="row-fluid">
-            <!-- Header from templates/header.html and app.js -->
-                
-<!--header>
-    <div class="container clearfix">
-        <h1 id="logo">
-          <a href="https://www.ncbs.res.in/ncbs25/" target="">
-            <img src="img/Assets/ncbs_logo_introtext.png" alt="LOGO" />
-          </a>
-        </h1>
-        <nav class=" pull-right" style="margin-right: 1.5em;">
-            <ul class="nav navbar-nav navbar-right">
-                </ul>
-                  <a href="https://www.ncbs.res.in/ncbs25/#about" target="">About</a>
-                  <a href="https://www.ncbs.res.in/" target="_blank">NCBS</a>
-                  
-            
-        </nav>
-    </div>
-</header><!-- /header -->
-<!--ul class="nav nabar-nav" style=" position: fixed;
-    right: 3%; top:8px; font-weight:600;
-    z-index: 1000; ">
-      <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white; font-size:18px;">Sandbox <span style="border-top-color:#fff;" class="caret"></span></a>
-<ul class="dropdown-menu" style="background-color:rgba(102, 102, 102, 0.2); color:white; border-radius:0px; margin-top:14px;">
-    <li><a href="https://www.ncbs.res.in/ncbs25/sandbox/ephemera">Ephemera</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="https://www.ncbs.res.in/ncbs25/sandbox/peopleplex">Peopleplex</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="https://www.ncbs.res.in/ncbs25/sandbox/space-tour">Space Tour</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="https://www.ncbs.res.in/ncbs25/sandbox/timeline">Timeline</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="https://www.ncbs.res.in/ncbs25/sandbox/oralhistory">Oral History</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="https://www.ncbs.res.in/ncbs25/sandbox/mosaic">Mosaic template</a></li>
-  </ul>
-</li>
-</ul></div>
-</div>
-<!-- /header -->
+    <!--Header-->
+    <div class="">
 
 
+    <!--Panorama-->
+    <div id='panorama'>
+                    <!-- Narration-->
+                    <div id="narration" class="narration">
 
+                        <!-- Close button -->
+                        <div id="close">
+                           <div class="pull-right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                        </div>
 
-
-        
-                <!--div id='intro'>
-                    <div id = 'close-intro'>X</div>
-	               <h4><br><br><b>Space Tour</b> offers a mash-up of oral histories, archival documents and contemporary spatial mapping techniques. The current tour is Obaid Siddiqi's office and lab, with the memories of Deepti Trivedi, a former student. Click on the information icon and arrows to navigate. Future developments will layer other people's memories and will be tours of other places.</h4>
-                   </div>
-            </div-->
-        
-
-
-<!--Panorama-->
-<div id='panorama'>
-                <!-- Narration-->
-                <div id="narration" class="narration">
-
-                    <!-- Close button -->
-                    <div id="close">
-                       <div class="pull-right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                    </div>
-
-                    <!--Title-->
-                    <div id="title" class="title-text">
-                        
-                    </div>
-                    <div id="contents">
+                        <!--Title-->
+                        <div id="title" class="title-text">
                             
+                        </div>
+                        <div id="contents">
+                                
+                        </div>
+                        
+
                     </div>
-                    
-
                 </div>
-            </div>
 
 
 
 
-<div class="col-sm-12">
-    <div class="text-center" style="margin-top:15px; font-family: 'Open Sans', sans-serif;">
-        <a data-toggle="modal" data-target="#ncbs-content-policy" style="cursor: pointer;     color: #333726;">copyright &copy 2016</a>
+    <div class="col-sm-12">
+        <div class="text-center" style="margin-top:15px; font-family: 'Open Sans', sans-serif;">
+            <a data-toggle="modal" data-target="#ncbs-content-policy" style="cursor: pointer;     color: #333726;">copyright &copy 2016</a>
+        </div>
     </div>
-</div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="ncbs-content-policy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: 'Open Sans', sans-serif; border-radius:0px; color:darkcyan; background-color: #f2f2f2;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" style="font-family: 'Open Sans', sans-serif; ">User Agreement</h4>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="ncbs-content-policy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="font-family: 'Open Sans', sans-serif; border-radius:0px; color:darkcyan; background-color: #f2f2f2;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel" style="font-family: 'Open Sans', sans-serif; ">User Agreement</h4>
+          </div>
+          <div class="modal-body">
+         
+
+         <p>This NCBS@25 digital exhibit contains records (images, audio and video excerpts, text) under copyright or under third party ownership. These records are given on loan to NCBS for the purposes of this exhibit. Material may only be reproduced with the explicit permission of the record owners, as mentioned in the caption for each image, and audio and video clip. The NCBS@25 About page has contact details. Any document without ownership details in the caption is in the public domain. Please respect the honour code and the generosity of the donors in sharing this material with a wider audience. 
+         </p>
+
+         <p>Please click "ACCEPT" if you agree to comply with these terms. If you do not agree to comply with these terms, click "DECLINE" after which you will be redirected to the NCBS home page.</p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" style="color:#666;">Accept & Continue</button>
+            <!--button type="button" class="btn btn-primary">Save changes</button-->
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-     
-
-     <p>This NCBS@25 digital exhibit contains records (images, audio and video excerpts, text) under copyright or under third party ownership. These records are given on loan to NCBS for the purposes of this exhibit. Material may only be reproduced with the explicit permission of the record owners, as mentioned in the caption for each image, and audio and video clip. The NCBS@25 About page has contact details. Any document without ownership details in the caption is in the public domain. Please respect the honour code and the generosity of the donors in sharing this material with a wider audience. 
-     </p>
-
-     <p>Please click "ACCEPT" if you agree to comply with these terms. If you do not agree to comply with these terms, click "DECLINE" after which you will be redirected to the NCBS home page.</p>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" data-dismiss="modal" style="color:#666;">Accept & Continue</button>
-        <!--button type="button" class="btn btn-primary">Save changes</button-->
+    </div>    </div>
       </div>
     </div>
-  </div>
-</div>    </div>
-  </div>
-</div>
+
+
+<script type="text/javascript" src="src/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="src/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="src/js/routie.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="src/js/underscore-min.js"></script>
+
+
+
+<script type="text/javascript" src="src/js/pannellum.js"></script>
+<script type="text/javascript" src="src/js/libpannellum.js"></script>
+<script type="text/javascript" src="src/js/RequestAnimationFrame.js"></script>
+
+<script type="text/javascript" src="data.js"></script>
+
+<!-- Load secondary dependencies -->
+
+
+<script type="text/javascript" src="js/jplayer/jplayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jplayer/jplayer/jquery.jplayer.swf"></script>
+<script src="js/jplayer/add-on/jplayer.playlist.min.js"></script>
 
 
 
 
 <script>
 
-pannellum.viewer('panorama', {
+$(document).ready(function($){
+    console.log("1. All dependencies Loaded, loading app now...", $, pannellum);
+    //initialize App object ST for Space Tour
+    window.ST = window.ST || {};
+    // Init App
+    ST.init = function(){
+        console.log("2. App init", this, this.config);
+        //Routes init
+        this.routeInit();
+        //Pannellum viewer init
+        pannellum.viewer('panorama', this.config);
+        //Bind Events
+        ST.bindUIEvents();
+        console.log("3. App loaded, have a gud time :)");
+
+    };
+
+    //Route handler
+
+    ST.routeInit = function(){
+        //show
+         routie('*/:name?', function(name) {
+            var $sidebar = $("#narration");
+            if(name.indexOf('&') > -1)
+                {
+                    window.temp = name.split('=');
+                    window.temp2 = temp[1];
+                    ST.sideBarContentFactory(temp2);
+                    if(!$sidebar.hasClass('movein')) {
+                        $sidebar.removeClass('moveout');
+                        $sidebar.addClass('movein');
+                    }
+                }
+            else
+                window.location.hash="";
+
+        });
+    }
+
+    // Bind any UI events
+    ST.bindUIEvents = function() {
+
+
+        //hide
+        //close fn
+        $( "#close" ).click(function() {
+         //$("#close").css("display", "none");
+         //$("#title").css("display", "none");
+         //$("#narration").css("display", "none");
+         window.location.hash="panorama";
+         if($("#narration").hasClass('moveout')) {
+               
+                $('#narration').removeClass('moveout');
+            }
+            else{
+                
+                $('#narration').removeClass('movein');
+                $('#narration').addClass('moveout');
+            }
+
+        });
+
+    };
+
+    //UI /UX for Sidebar templates and content
+    ST.sideBarContentFactory = function(id){
+        //creates narrattion template
+        var titleDOM = $("#title");
+        var contentsDOM = $("#contents");
+        //clear previous content
+        titleDOM.html('');
+        contentsDOM.html('');
+
+
+        //filter data
+        var content = _.find(data, function(item, index, data){
+        return item.id === id;
+        });
+
+        
+        //setup title
+        var titleTemplate = _.template("<h3><%=title%></h3>");
+        var titleData = titleTemplate({
+            title: content.title
+        });
+        titleDOM.append(titleData);
+
+        //setup content
+        var contentTemplate = _.template(
+        "<div id='space-at-the-top' class='space-at-the-top'></div>"+
+        "<p class='description'><%=des%></p>"
+        
+        );
+        var contentData = contentTemplate({
+            des: content.description
+        });
+        contentsDOM.append(contentData);
+        //appendToDom(contentData, "description");
+
+        if(content.urls.audio){
+            var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
+                        "<source src='<%=url%>'> type='audio/mpeg'>"+
+                        "</audio></center></div>");
+            console.log(content.urls.audio, "audio present");
+            var audioPlayerDom = audioTemplate({url: content.urls.audio});
+            contentsDOM.append(audioPlayerDom);
+
+           /* var icon = "<span class='audio-player-trigger' data-component='audio' aria-hidden='true' data-url= '"+content.urls.audio+"'><img src='imgs/components/small-sound.svg' onmouseover='this.src='imgs/components/small-sound-hover.svg'; onmouseout='this.src='imgs/components/small-sound.svg';</span>";
+            appendToDom(icon, "audio");*/
+
+        }
+        var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img src='<%=item%>'>"+
+                    "</div></div><br><br>");
+        
+
+        if(content.urls.img){
+            _.each(content.urls.img, function(item){
+                var imgElm = imgTemplate({item:item});
+                contentsDOM.append(imgElm);
+            }, this);
+        }
+
+        function appendToDom(elm, type){
+            $("#contents").append(elm);
+            if(type == "audio"){
+               // bindAudioEvent();
+            }
+            if(type =="img"){
+               // imgViewer();
+            }
+        }
+        
+        function bindAudioEvent(){
+            $(".audio-player-trigger").on("click", function(event){
+                console.log(event.currentTarget, event);
+                var audioPlayerDom = audioTemplate(event.currentTarget.dataset);
+                $('#contents').append(audioPlayerDom);
+            });
+        }
+
+    };
+
+    
+
+
+
+
+    //Pannellum configuration for the Space tour
+    ST.config = {
 
     "default": {
         "firstScene": "siddiqi_office_hdr",
         "sceneFadeDuration": 2000,
         "autoLoad": true,
         "hfov": 80,
-    	"autoRotate": -0.4,
-    	"autoRotateInactivityDelay": 40000,
-    	"toggleFullscreen": true,
-    	"showZoomCtrl": true,
-    	"compass":false
-    	//"hotSpotDebug": true
+        "autoRotate": -0.4,
+        "autoRotateInactivityDelay": 40000,
+        "toggleFullscreen": true,
+        "showZoomCtrl": true,
+        "compass":false
+        //"hotSpotDebug": true
     },
     
     "scenes": {
@@ -395,154 +481,12 @@ pannellum.viewer('panorama', {
 
             ]
         }
-
-        
-    }
-});
-</script>
-
-
-
-<script type="text/javascript" src="src/js/ImageViewer-master/imageviewer.min.js"></script>
-
-<script type="text/javascript">
-//creates narrattion template
-template = function(id){
-	var titleDOM = $("#title");
-    var contentsDOM = $("#contents");
-	//clear previous content
-	titleDOM.html('');
-	contentsDOM.html('');
-
-
-	//filter data
-	var content = _.find(data, function(item, index, data){
-  	return item.id === id;
-	});
-
-	
-	//setup title
-	var titleTemplate = _.template("<h3><%=title%></h3>");
-	var titleData = titleTemplate({
-    	title: content.title
-  	});
-	titleDOM.append(titleData);
-
-	//setup content
-	var contentTemplate = _.template(
-	"<div id='space-at-the-top' class='space-at-the-top'></div>"+
-	"<p class='description'><%=des%></p>"
-	
-	);
-	var contentData = contentTemplate({
-    	des: content.description
-  	});
-    contentsDOM.append(contentData);
-    //appendToDom(contentData, "description");
-
-    if(content.urls.audio){
-        var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
-                    "<source src='<%=url%>'> type='audio/mpeg'>"+
-                    "</audio></center></div>");
-        console.log(content.urls.audio, "audio present");
-        var audioPlayerDom = audioTemplate({url: content.urls.audio});
-        contentsDOM.append(audioPlayerDom);
-
-       /* var icon = "<span class='audio-player-trigger' data-component='audio' aria-hidden='true' data-url= '"+content.urls.audio+"'><img src='imgs/components/small-sound.svg' onmouseover='this.src='imgs/components/small-sound-hover.svg'; onmouseout='this.src='imgs/components/small-sound.svg';</span>";
-        appendToDom(icon, "audio");*/
-
-    }
-    var imgTemplate = _.template("<div class='image-container'><div class='img-holder'><img src='<%=item%>'>"+
-                "</div></div><br><br>");
-    
-
-    if(content.urls.img){
-        _.each(content.urls.img, function(item){
-            var imgElm = imgTemplate({item:item});
-            contentsDOM.append(imgElm);
-        }, this);
     }
 
-    function appendToDom(elm, type){
-        $("#contents").append(elm);
-        if(type == "audio"){
-           // bindAudioEvent();
-        }
-        if(type =="img"){
-           // imgViewer();
-        }
-    }
-    
-    function bindAudioEvent(){
-        $(".audio-player-trigger").on("click", function(event){
-            console.log(event.currentTarget, event);
-            var audioPlayerDom = audioTemplate(event.currentTarget.dataset);
-            $('#contents').append(audioPlayerDom);
-        });
-    }
-   /* function imgViewer() {
-        console.log("binding wvw");
-       viewer = ImageViewer();
-           $(".img-holder img").on('click', function () {
-            console.log(this.src);
-               var imgSrc = this.src;
-                   //highResolutionImage = $(this).data('high-res-img');
-        
-               viewer.show(imgSrc);
-    });
-       }*/
-	//document.getElementById("contents").innerHTML = contentData
-}
+};
 
-
-</script>
-
-
-<script>
-//show
- routie('*/:name?', function(name) {
-    var sidebar = $("#narration");
-if(name.indexOf('&') > -1)
-{
-    window.temp = name.split('=');
-    window.temp2 = temp[1];
-    template(temp2);
-    if(!sidebar.hasClass('movein')) {
-        sidebar.removeClass('moveout');
-        sidebar.addClass('movein');
-    }
-}
-else
-    window.location.hash="";
-
-});
-
-//hide
-//close fn
-$( "#close" ).click(function() {
- //$("#close").css("display", "none");
- //$("#title").css("display", "none");
- //$("#narration").css("display", "none");
- window.location.hash="panorama";
- if($("#narration").hasClass('moveout')) {
-       
-        $('#narration').removeClass('moveout');
-    }
-    else{
-        
-        $('#narration').removeClass('movein');
-        $('#narration').addClass('moveout');
-    }
-
-});
-
-
-</script>
-
-<script type="text/javascript">
-    $( "#close-intro" ).click(function() {
-    $("#intro").css("display", "none");
-    //$("#close").css("display", "none");
+//Start App
+ST.init();
 });
 
 </script>
