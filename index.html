@@ -14,12 +14,14 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 		<link type="text/css" rel="stylesheet" href="src/css/header.css" />
 		<link type="text/css" rel="stylesheet" href="src/css/main.css" />
         <link rel="stylesheet" href="src/js/font-awesome-4.6.3/css/font-awesome.min.css">
+
         <link type="text/css" rel="stylesheet" href="src/js/ImageViewer-master/imageviewer.css" />
+
 
 	<link rel="stylesheet" href="src/css/pannellum.css"/>
 
     <link rel="stylesheet" href="src/css/content.css"/>
- 
+
 
     <!-- audio player css-->
     <link href="src/js/jplayer/skin/pink.flag/css/jplayer.pink.flag.css" rel="stylesheet">
@@ -30,13 +32,16 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
    
     </style>
 
+
    
 </head>
 
     <body>
 
+
         <!--Header-->
         <div class="">
+
 
 
         <!--Panorama-->
@@ -60,6 +65,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 
                         </div>
                     </div>
+
 
 
 
@@ -162,11 +168,8 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 
     <script type="text/javascript" src="src/js/routie.js"></script>
 
-
-
-
-
     <script type="text/javascript" src="src/js/underscore-min.js"></script>
+
 
 
 
@@ -174,18 +177,22 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
     <script type="text/javascript" src="src/js/libpannellum.js"></script>
     <script type="text/javascript" src="src/js/RequestAnimationFrame.js"></script>
 
+
     <script type="text/javascript" src="data.js"></script>
 
     <!-- Load secondary dependencies -->
 
 
+
     <script type="text/javascript" src="src/js/jplayer/jplayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="src/js/jplayer/jplayer/jquery.jplayer.swf"></script>
+
 
       <script src="src/js/jplayer/add-on/jplayer.playlist.min.js"></script>
 
 
 <!-- Load application code -->
+
 
     <script>
 
@@ -250,6 +257,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
             });
         }
 
+
         // Bind any UI events
         ST.bindUIEvents = function() {
 
@@ -285,6 +293,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
             return item.id === id;
             });
 
+
             
             //setup Templates and compile with data
             //Title
@@ -316,7 +325,6 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
             // render updated data
             titleDOM.append(titleCompiled);
             contentsDOM.append(contentCompiled);
-
             
             console.log(contentsDOM, "contents dom");
             // Check media type
