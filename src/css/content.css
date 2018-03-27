@@ -147,37 +147,21 @@ h3 {
     /* Important for scrolling! */
     margin: 15px 0 0 0;
     padding: 20px 0 0 0;
-    text-align: center;
-
-    max-height:350px;
-
-
-
-
 }
 
 .image-container img {
     height: auto;
-    width: auto;
-   /* max-height: 100%;
-    max-width: 100%;*/
-    margin-left: auto;
-    margin-right: auto;
-
-    /* Three lines that center vertically 
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-      box-shadow: 10px 10px 5px grey;*/
+    width: 100%;
+  
 }
 
 
 .img-holder {
-    margin: 0px;
-    height: 350px;
-    /*max-height: 350px;*/
-    width: 100%;
-
+    margin: auto;
+    height:auto;
+    width: 250px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 3px #ccc;
 
 }
 

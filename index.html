@@ -15,7 +15,6 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 		<link type="text/css" rel="stylesheet" href="src/css/main.css" />
         <link rel="stylesheet" href="src/js/font-awesome-4.6.3/css/font-awesome.min.css">
 
-        <link type="text/css" rel="stylesheet" href="src/js/ImageViewer-master/imageviewer.css" />
 
 
 	<link rel="stylesheet" href="src/css/pannellum.css"/>
@@ -208,7 +207,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
             autoPlay: true,
             enableRemoveControls: true
           },
-          swfPath: "/js/libs/jplayer/jplayer",
+          swfPath: "src/js/jplayer/jplayer",
           useStateClassSkin: true,
           smoothPlayBar: true,
           supplied: "mp3"
@@ -332,7 +331,7 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
                 /*var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
                             "<source src='<%=url%>'> type='audio/mpeg'>"+
                             "</audio></center></div>");*/
-                var audioTemplate = _.template("<img src='imgs/components/small-sound.svg' data-url='<%=url%>' data-title='<%=title%>' class='audio-icon'  onmouseover="+"this.src='imgs/components/small-sound-hover.svg'; onmouseout="+"this.src='imgs/components/small-sound.svg';>");
+                var audioTemplate = _.template("<img src='imgs/components/small-sound.svg' data-url='<%=url%>' data-title='<%=title%>' data-interviewee='Deepti Trivedi' class='audio-icon'  onmouseover="+"this.src='imgs/components/small-sound-hover.svg'; onmouseout="+"this.src='imgs/components/small-sound.svg';>");
                 console.log(content.urls.audio, "audio present");
                 var audioPlayerCompiled = audioTemplate({url: content.urls.audio, title:content.title});
               
@@ -342,7 +341,8 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
                     //var currentActive = _.findWhere(ST.narrative, {id: ST.queryParam});
                     var playlist = []
                     playlist.push({title: e.target.dataset.title,
-                                   mp3: e.target.dataset.url
+                                   mp3: e.target.dataset.url,
+                                   artist: e.target.dataset.interviewee
                                      });
                     console.log(playlist);
                     if(ST.playerDOM.hasClass('hidden')){
