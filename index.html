@@ -25,8 +25,9 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
     <link href="src/js/jplayer/skin/pink.flag/css/jplayer.pink.flag.css" rel="stylesheet">
     <style>
     body {
-        overflow: hidden;
+
     }
+   
     </style>
 
    
@@ -97,6 +98,64 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
         </div>
 
 
+        <!-- Audio player temmplate and COntainer -->
+   <div class="media-player-container hidden" id="media-player-widget">
+     <button type="button" class="close pull-left" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button>
+    <div id="jp_selector_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
+     <div class="jp-type-playlist">
+       <div id="jp_player_1" class="jp-jplayer" ></div>
+       <div class="jp-gui">
+         <div class="jp-video-play" style="display: none;">
+           <button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+         </div>
+         <div class="jp-interface">
+           <div class="jp-progress">
+             <div class="jp-seek-bar" style="width: 100%;">
+               <div class="jp-play-bar" style="width: 8.41511%;"></div>
+             </div>
+           </div>
+           <div class="jp-current-time" role="timer" aria-label="time"></div>
+           <div class="jp-duration" role="timer" aria-label="duration"></div>
+           <div class="jp-details" style="display: none;">
+             <div class="jp-title" aria-label="title"></div>
+           </div>
+           <div class="jp-controls-holder">
+             <div class="jp-volume-controls">
+               <button class="jp-mute" role="button" tabindex="0">mute</button>
+               <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+               <div class="jp-volume-bar">
+                 <div class="jp-volume-bar-value" style="width: 80%;"></div>
+               </div>
+             </div>
+             <div class="jp-controls">
+               <button class="jp-previous" role="button" tabindex="0">previous</button>
+               <button class="jp-play" role="button" tabindex="0">play</button>
+               <button class="jp-next" role="button" tabindex="0">next</button>
+               <button class="jp-stop" role="button" tabindex="0">stop</button>
+             </div>
+             <div class="jp-toggles">
+               <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+               <button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+               <!--button class="jp-full-screen" role="button" tabindex="0">full screen</button-->
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="jp-playlist">
+         <ul style="display: block;">
+           <li></li>
+         </ul>
+       </div>
+       <div class="jp-no-solution" style="display: none;">
+         <span>Update Required</span>
+         To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+       </div>
+     </div>
+    </div>
+    </div>
+
+    <!-- Enf=d audio player -->
+
     <script type="text/javascript" src="src/js/jquery.min.js"></script>
 
     <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
@@ -122,10 +181,11 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
 
     <script type="text/javascript" src="src/js/jplayer/jplayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="src/js/jplayer/jplayer/jquery.jplayer.swf"></script>
-    <script src="src/js/jplayer/add-on/jplayer.playlist.min.js"></script>
+
+      <script src="src/js/jplayer/add-on/jplayer.playlist.min.js"></script>
 
 
-
+<!-- Load application code -->
 
     <script>
 
@@ -134,6 +194,27 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
         //initialize App object ST for Space Tour
         window.ST = window.ST || {};
         ST.narrative = window.data || data;
+        // audio player config
+        var cssSelector =  {jPlayer: "#jp_player_1", cssSelectorAncestor: "#jp_selector_1"};
+        var playerOptions = {
+          playlistOptions: {
+            autoPlay: true,
+            enableRemoveControls: true
+          },
+          swfPath: "/js/libs/jplayer/jplayer",
+          useStateClassSkin: true,
+          smoothPlayBar: true,
+          supplied: "mp3"
+        };
+        ST.playlist = [];
+        ST.player = new jPlayerPlaylist(cssSelector, ST.playlist, playerOptions);
+        ST.playerDOM = $('#media-player-widget');
+        var playerCloseDOM = $('#media-player-widget .close');
+        playerCloseDOM.on('click', function(e){
+            e.preventDefault();
+            ST.player.pause();
+            ST.playerDOM.addClass('hidden');
+        });
         // Init App
         ST.init = function(){
             console.log("2. App init", this, this.config);
@@ -155,9 +236,9 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
                 var $sidebar = $("#narration");
                 if(name.indexOf('&') > -1)
                     {
-                        window.temp = name.split('=');
-                        window.temp2 = temp[1];
-                        ST.sideBarContentFactory(temp2);
+                        var temp = name.split('=');
+                        ST.queryParam = temp[1];
+                        ST.sideBarContentFactory(ST.queryParam);
                         if(!$sidebar.hasClass('movein')) {
                             $sidebar.removeClass('moveout');
                             $sidebar.addClass('movein');
@@ -212,7 +293,8 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
             //content
             var contentTemplate = _.template(
             "<div id='space-at-the-top' class='space-at-the-top'></div>"+
-            "<p class='description'><%=description%></p>"
+            "<p class='description'><%=description%>"+
+            "<span data-tag='<%=id%>' data-component='audio' class=''></span></p>"
             
             );
             //Image template
@@ -223,7 +305,8 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
                 title: content.title
             });
             var contentCompiled = contentTemplate({
-                description: content.description
+                description: content.description,
+                id: content.id
             });
 
             //DOM Operations - to append compiled content
@@ -234,15 +317,33 @@ Uses Pannellum https://pannellum.org/ and routie http://projects.jga.me/routie/ 
             titleDOM.append(titleCompiled);
             contentsDOM.append(contentCompiled);
 
+            
+            console.log(contentsDOM, "contents dom");
             // Check media type
             if(content.urls.audio){
-                var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
+                /*var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
                             "<source src='<%=url%>'> type='audio/mpeg'>"+
-                            "</audio></center></div>");
+                            "</audio></center></div>");*/
+                var audioTemplate = _.template("<img src='imgs/components/small-sound.svg' data-url='<%=url%>' data-title='<%=title%>' class='audio-icon'  onmouseover="+"this.src='imgs/components/small-sound-hover.svg'; onmouseout="+"this.src='imgs/components/small-sound.svg';>");
                 console.log(content.urls.audio, "audio present");
-                var audioPlayerDom = audioTemplate({url: content.urls.audio});
-                contentsDOM.append(audioPlayerDom);
-
+                var audioPlayerCompiled = audioTemplate({url: content.urls.audio, title:content.title});
+              
+                contentsDOM.find('span').append(audioPlayerCompiled);
+                contentsDOM.find('span').on('click', function(e){
+                    e.preventDefault();
+                    //var currentActive = _.findWhere(ST.narrative, {id: ST.queryParam});
+                    var playlist = []
+                    playlist.push({title: e.target.dataset.title,
+                                   mp3: e.target.dataset.url
+                                     });
+                    console.log(playlist);
+                    if(ST.playerDOM.hasClass('hidden')){
+                        ST.playerDOM.removeClass('hidden');
+                    }
+                    
+                    ST.player.setPlaylist(playlist);
+                    //console.log(e.target, e.currentTarget, e.target.dataset);
+                });
                /* var icon = "<span class='audio-player-trigger' data-component='audio' aria-hidden='true' data-url= '"+content.urls.audio+"'><img src='imgs/components/small-sound.svg' onmouseover='this.src='imgs/components/small-sound-hover.svg'; onmouseout='this.src='imgs/components/small-sound.svg';</span>";
                 appendToDom(icon, "audio");
 

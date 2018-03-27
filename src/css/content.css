@@ -1,8 +1,31 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 28px;
+    font-family: "Open Sans", sans-serif;
 }
 
+#media-player-widget {
+    top: 0px;
+    right:0px;
+    position: absolute;
+
+}
+#media-player-widget .close {
+    color: #ffa008;
+    font-size: 30px;
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+ .audio-icon {
+        width:22px;
+        vertical-align: middle;
+        cursor:pointer;
+    }
 #intro{
     margin: 20px;
   padding: 20px;
@@ -24,7 +47,7 @@ body {
     position: absolute;
     color: black;
   
-    font-size: 20px;
+    /*font-size: 20px;*/
      cursor: pointer; 
      cursor: hand; 
 
@@ -69,7 +92,7 @@ body {
         overflow: auto;
         transition: all 0.2s linear;
         left: -605px;
-        font-size: 18px;
+        /*font-size: 18px;*/
         padding: 20px;
         
 
@@ -159,7 +182,7 @@ h3 {
 .title-text {
     font-weight: bold;
     text-align: left;
-    margin: 17px;
+    margin-left: 17px;
 }
 
 .chapter-header {
@@ -170,7 +193,7 @@ h3 {
 }
 
 .source {
-    font-size: 9pt;
+    /*font-size: 9pt;*/
     margin: 20px;
 }
 
