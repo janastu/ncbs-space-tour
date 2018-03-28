@@ -25,6 +25,7 @@ body {
         width:22px;
         vertical-align: middle;
         cursor:pointer;
+        padding:5px;
     }
 #intro{
     margin: 20px;
