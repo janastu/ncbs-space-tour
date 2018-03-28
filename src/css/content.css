@@ -152,7 +152,7 @@ h3 {
 .image-container img {
     height: auto;
     width: 100%;
-  
+    cursor:pointer !important;
 }
 
 
@@ -233,3 +233,24 @@ h3 {
 
     }
 
+/*====================================================
+Vendor overwrites for lightgallery styles
+========================================================
+*/
+.lg-outer {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.lg-toolbar, .lg-prev, .lg-next {
+  background-color: #fff !important;
+}
+.lg-icon{
+  color: #822d1a !important;
+}
+.lg-icon:hover {
+  color: #F9A01F !important;
+}
+.lg-sub-html{
+  color: #888 !important;
+  background-color: #fff !important;
+}
