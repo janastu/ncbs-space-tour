@@ -146,8 +146,13 @@ h3 {
 .image-container {
     /* margin + padding = imageContainerMargin in script.js */
     /* Important for scrolling! */
-    margin: 15px 0 0 0;
-    padding: 20px 0 0 0;
+    margin: 15px 0 0 20px;
+    padding: 5px 0px 0px 0;
+    max-width: 150px;
+    height: auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+
 }
 
 .image-container img {
