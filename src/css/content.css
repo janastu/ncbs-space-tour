@@ -22,11 +22,14 @@ body {
     padding-bottom: 5px;
 }
  .audio-icon {
-        width:22px;
+        width:120px;
         vertical-align: middle;
         cursor:pointer;
         padding:5px;
     }
+.audio-embed{
+    display:block;
+}
 #intro{
     margin: 20px;
   padding: 20px;

@@ -108,7 +108,7 @@
             var contentTemplate = _.template(
             "<div id='space-at-the-top' class='space-at-the-top'></div>"+
             "<p class='description'><%=description%>"+
-            "<span data-tag='<%=id%>' data-component='audio' class=''></span></p>"+
+            "<span data-tag='<%=id%>' data-component='audio' class='audio-embed'></span></p>"+
             "<ul id='ul-li'> </ul>"
             
             );
@@ -137,7 +137,7 @@
                 /*var audioTemplate = _.template("<div class='audio-container'><center><audio controls>"+
                             "<source src='<%=url%>'> type='audio/mpeg'>"+
                             "</audio></center></div>");*/
-                var audioTemplate = _.template("<img src='imgs/components/small-sound.svg' data-url='<%=url%>' data-title='<%=title%>' data-interviewee='Deepti Trivedi' class='audio-icon'  onmouseover="+"this.src='imgs/components/small-sound-hover.svg'; onmouseout="+"this.src='imgs/components/small-sound.svg';>");
+                var audioTemplate = _.template("<img src='imgs/components/sound-icon.svg' data-url='<%=url%>' data-title='<%=title%>' data-interviewee='Deepti Trivedi' class='audio-icon'  onmouseover="+"this.src='imgs/components/sound-icon-hover.svg'; onmouseout="+"this.src='imgs/components/sound-icon.svg';>");
                 console.log(content.urls.audio, "audio present");
                 var audioPlayerCompiled = audioTemplate({url: content.urls.audio, title:content.title});
               
