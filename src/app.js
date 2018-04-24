@@ -228,7 +228,7 @@
             "autoRotate": -0.4,
             "autoRotateInactivityDelay": 40000,
             "toggleFullscreen": true,
-            "showZoomCtrl": true,
+            "showZoomCtrl": false,
             "compass":false
             //"hotSpotDebug": true
         },
